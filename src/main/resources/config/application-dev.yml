@@ -31,15 +31,6 @@ spring:
     serialization:
       indent-output: true
   datasource:
-    type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:postgresql://localhost:5432/jeftechdb
-    username: postgres
-    password: roott
-    hikari:
-      poolName: Hikari
-      auto-commit: false
-  liquibase:
-    # Remove 'faker' if you do not want the sample data to be loaded automatically
     contexts: dev, faker
   mail:
     host: localhost
