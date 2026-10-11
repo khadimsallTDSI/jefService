@@ -31,6 +31,14 @@ spring:
     serialization:
       indent-output: true
   datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:postgresql://localhost:5432/jeftechdb
+    username: postgres
+    password: roott
+    hikari:
+      poolName: Hikari
+      auto-commit: false
+  liquibase:
     contexts: dev, faker
   mail:
     host: localhost
@@ -54,6 +62,8 @@ server:
 # ===================================================================
 
 jhipster:
+  clientApp:
+    name: 'jefServiceApp'
   cache: # Cache configuration
     ehcache: # Ehcache configuration
       time-to-live-seconds: 3600 # By default objects stay 1 hour in the cache
@@ -96,4 +106,12 @@ jhipster:
 # https://www.jhipster.tech/common-application-properties/
 # ===================================================================
 
-# application:
+application:
+  sms:
+    lafrica-mobile:
+      enabled: true
+      base-url: ${LAM_SMS_BASE_URL:https://lamsms.lafricamobile.com}
+      path: ${LAM_SMS_PATH:/api}
+      account-id: ${LAM_SMS_ACCOUNT_ID:SYNAPSYS_CONSEILS_01}
+      password: ${LAM_SMS_PASSWORD:XCEOWUoJRTskAgl}
+      sender: ${LAM_SMS_SENDER:LAM TEST}

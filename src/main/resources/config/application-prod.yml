@@ -121,4 +121,12 @@ jhipster:
 # https://www.jhipster.tech/common-application-properties/
 # ===================================================================
 
-# application:
+application:
+  sms:
+    lafrica-mobile:
+      enabled: true
+      base-url: ${LAM_SMS_BASE_URL:https://lamsms.lafricamobile.com}
+      path: ${LAM_SMS_PATH:/api}
+      account-id: ${LAM_SMS_ACCOUNT_ID:SYNAPSYS_CONSEILS_01}
+      password: ${LAM_SMS_PASSWORD:XCEOWUoJRTskAgl}
+      sender: ${LAM_SMS_SENDER:LAM TEST}
